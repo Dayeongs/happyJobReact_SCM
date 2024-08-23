@@ -6,6 +6,7 @@ import { Notice } from "../pages/Notice";
 import { ComnCodMgr } from "../pages/ComnCodMgr";
 import { ComnCodeMgrDetailMain } from "../component/page/ComnCodMgr/ComnCodeMgrDetailMain/ComnCodeMgrDetailMain";
 import { Product } from "../pages/Product";
+import { Cart } from "../pages/Cart";
 
 const routers: RouteObject[] = [
     { path: "*", element: <NotFound /> },
@@ -28,6 +29,10 @@ const routers: RouteObject[] = [
             {
                 path: "product",
                 children: [{ path: "product.do", element: <Product /> }],
+            },
+            {
+                path: "mypage",
+                children: [{ path: "cart.do", element: <Cart /> }],
             },
         ],
     },
