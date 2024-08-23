@@ -8,6 +8,7 @@ import { ComnCodeMgrDetailMain } from "../component/page/ComnCodMgr/ComnCodeMgrD
 import { Product } from "../pages/Product";
 import { Cart } from "../pages/Cart";
 import { Order } from "../pages/Order";
+import { Return } from "../pages/Return";
 
 const routers: RouteObject[] = [
     { path: "*", element: <NotFound /> },
@@ -36,6 +37,7 @@ const routers: RouteObject[] = [
                 children: [
                     { path: "cart.do", element: <Cart /> },
                     { path: "order.do", element: <Order /> },
+                    { path: "return.do", element: <Return /> },
                 ],
             },
         ],
