@@ -45,3 +45,7 @@ export const Return_deliveryInsertApi = {
 export const ReturndeliveryUpdateApi = {
     returndeliveryUpdate: `/business/returndeliveryUpdate.do`,
 };
+
+export const DirectionDeliveryListApi = {
+    directionDeliveryListJson: `/direction/directionDeliveryListJson.do`,
+};
