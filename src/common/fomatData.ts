@@ -20,3 +20,9 @@ export const detailDate = (timeStamp: number) => {
 
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}.${milliseconds}`;
 };
+
+export const formatWon = (price: number) => {
+    const price1 = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    return `${price1} 원`;
+};
