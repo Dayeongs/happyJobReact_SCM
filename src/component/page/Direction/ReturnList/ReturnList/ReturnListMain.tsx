@@ -1,9 +1,10 @@
 import axios, { AxiosResponse } from "axios";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { StyledTable, StyledTd, StyledTh } from "../../../common/styled/StyledTable";
-import { PageNavigate } from "../../../common/pageNavigation/PageNavigate";
-import { fomatDate, formatWon } from "../../../../common/fomatData";
+import { StyledTable } from "../../../../common/styled/StyledTable";
+import { StyledTd, StyledTh } from "../../../Executives/ExecutivesTopMain/styled";
+import { fomatDate, formatWon } from "../../../../../common/fomatData";
+import { PageNavigate } from "../../../../common/pageNavigation/PageNavigate";
 
 export interface IReturnList {
     return_order_date: number;
@@ -14,38 +15,33 @@ export interface IReturnList {
 }
 
 export interface IReturnListJsonResponse {
-    listCount : number;
-    returnList : IReturnList[];
+    listCount: number;
+    returnList: IReturnList[];
 }
 
 export const ReturnListMain = () => {
     const { search } = useLocation();
-    const [ returnList, setReturnList ] = useState<IReturnList[]>([]);
-    const [ listCount, setListCount ] = useState<number>(0);
-    const [ currentParam, setCurrentParam] = useState<number | undefined>();
+    const [returnList, setReturnList] = useState<IReturnList[]>([]);
+    const [listCount, setListCount] = useState<number>(0);
+    const [currentParam, setCurrentParam] = useState<number | undefined>();
 
     useEffect(() => {
         searchReturnList();
     }, [search]);
 
-    const searchReturnList = (cpage?:number) => {
+    const searchReturnList = (cpage?: number) => {
         cpage = cpage || 1;
         const searchParam = new URLSearchParams(search);
 
-        
+        searchParam.append("cpage", cpage.toString());
+        searchParam.append("pageSize", "5");
 
-        searchParam.append('cpage', cpage.toString());
-        searchParam.append('pageSize', '5');
-
-        axios.post('/direction/returnListJson.do', searchParam).then((res: AxiosResponse<IReturnListJsonResponse>) => {
+        axios.post("/direction/returnListJson.do", searchParam).then((res: AxiosResponse<IReturnListJsonResponse>) => {
             setReturnList(res.data.returnList);
             setListCount(res.data.listCount);
             setCurrentParam(cpage);
-        })
-    }
-
-
-
+        });
+    };
 
     return (
         <>
@@ -57,7 +53,7 @@ export const ReturnListMain = () => {
                         <StyledTh size={20}>제품명</StyledTh>
                         <StyledTh size={15}>반품개수</StyledTh>
                         <StyledTh size={30}>금액</StyledTh>
-                        <StyledTh size={30}>반품상태</StyledTh> 
+                        <StyledTh size={30}>반품상태</StyledTh>
                     </tr>
                 </thead>
 
@@ -81,12 +77,7 @@ export const ReturnListMain = () => {
                     )}
                 </tbody>
             </StyledTable>
-            <PageNavigate
-                totalItemsCount={listCount}
-                onChange={searchReturnList}
-                itemsCountPerPage={5}
-                activePage={currentParam as number}
-            ></PageNavigate>
+            <PageNavigate totalItemsCount={listCount} onChange={searchReturnList} itemsCountPerPage={5} activePage={currentParam as number}></PageNavigate>
         </>
     );
-}
+};
