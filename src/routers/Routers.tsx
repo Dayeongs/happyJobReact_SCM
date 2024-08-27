@@ -23,6 +23,8 @@ import { DeliveryList } from "../pages/DeliveryList";
 import { OrderChk } from "../pages/OrderChk";
 import { ManagementUserInfo } from "../pages/ManagementUserInfo";
 import { OrderCompany } from "../pages/OrderCompany";
+import { Inquiry } from "../pages/Inquiry";
+import { InquiryDetailMain } from "../component/page/Inquiry/InquiryDetailMain/InquiryDetailMain";
 
 const routers: RouteObject[] = [
     { path: "*", element: <NotFound /> },
@@ -33,7 +35,11 @@ const routers: RouteObject[] = [
         children: [
             {
                 path: "board",
-                children: [{ path: "notice.do", element: <Notice /> }],
+                children: [
+                    { path: "notice.do", element: <Notice /> },
+                    { path: "inquiry.do", element: <Inquiry /> },
+                    { path: "inquiry.do/:inquirySeq", element: <InquiryDetailMain /> },
+                ],
             },
             {
                 path: "system",
