@@ -22,6 +22,7 @@ import { ReturnList } from "../pages/ReturnList";
 import { DeliveryList } from "../pages/DeliveryList";
 import { OrderChk } from "../pages/OrderChk";
 import { ManagementUserInfo } from "../pages/ManagementUserInfo";
+import { OrderCompany } from "../pages/OrderCompany";
 
 const routers: RouteObject[] = [
     { path: "*", element: <NotFound /> },
@@ -85,7 +86,10 @@ const routers: RouteObject[] = [
             },
             {
                 path: "management",
-                children: [{ path: "userInfo.do", element: <ManagementUserInfo /> }],
+                children: [
+                    { path: "userInfo.do", element: <ManagementUserInfo /> },
+                    { path: "OrderCompany.do", element: <OrderCompany /> },
+                ],
             },
         ],
     },
