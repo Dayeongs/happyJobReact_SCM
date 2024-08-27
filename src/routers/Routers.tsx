@@ -18,6 +18,7 @@ import { Obtain } from "../pages/Obtain";
 import { BusinessReturn } from "../pages/BusinessReturn";
 import { BusinessOrder } from "../pages/BusinessOrder";
 import { OrderList } from "../pages/OrderList";
+import { ReturnList } from "../pages/ReturnList";
 
 const routers: RouteObject[] = [
     { path: "*", element: <NotFound /> },
@@ -69,7 +70,10 @@ const routers: RouteObject[] = [
             },
             {
                 path: "direction",
-                children: [{ path: "orderList.do", element: <OrderList /> }],
+                children: [
+                    { path: "orderList.do", element: <OrderList /> },
+                    { path: "returnList.do", element: <ReturnList /> },
+                ],
             },
         ],
     },
