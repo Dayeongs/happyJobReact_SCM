@@ -14,6 +14,7 @@ import { ExecutivesTop } from "../pages/ExecutivesTop";
 import { ExecutivesPnL } from "../pages/ExecutivesPnL";
 import { Approval } from "../pages/Approval";
 import { Storage } from "../pages/Storage";
+import { Obtain } from "../pages/Obtain";
 
 const routers: RouteObject[] = [
     { path: "*", element: <NotFound /> },
@@ -55,6 +56,7 @@ const routers: RouteObject[] = [
                     { path: "storage.do", element: <Storage /> },
                 ],
             },
+            { path: "business", children: [{ path: "obtain.do", element: <Obtain /> }] },
         ],
     },
 ];
