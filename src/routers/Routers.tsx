@@ -12,6 +12,7 @@ import { Return } from "../pages/Return";
 import { Executive } from "../pages/Executives";
 import { ExecutivesTop } from "../pages/ExecutivesTop";
 import { ExecutivesPnL } from "../pages/ExecutivesPnL";
+import { Approval } from "../pages/Approval";
 
 const routers: RouteObject[] = [
     { path: "*", element: <NotFound /> },
@@ -49,6 +50,7 @@ const routers: RouteObject[] = [
                     { path: "sales.do", element: <Executive /> },
                     { path: "salesTop.do", element: <ExecutivesTop /> },
                     { path: "PandL.do", element: <ExecutivesPnL /> },
+                    { path: "approval.do", element: <Approval /> },
                 ],
             },
         ],
