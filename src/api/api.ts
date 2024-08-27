@@ -12,3 +12,8 @@ export const ProductApi = {
     saveCartProductJson: "/product/productCart.do",
     savePayProductJson: "/product/productPay.do",
 };
+
+export const StorageApi = {
+    listStorageJson: "/executives/storageListJson.do",
+    detailStorageJson: "/executives/storageDetailJson.do",
+};
