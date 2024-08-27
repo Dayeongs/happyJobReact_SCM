@@ -53,3 +53,13 @@ export const DirectionDeliveryListApi = {
 export const OrderChkApi = {
     orderListJson: "/work/orderListJson.do",
 };
+
+export const InquiryApi = {
+    listInquiryJson: "/board/inquiryListJson.do",
+    detailInquiryJson: "/board/inquiryDetailJson.do",
+    listInquiryCategoryJson: "/board/inquiryCategoryJson.do",
+    saveInquiryJson: "/board/inquiryInsertJson.do",
+    updateInquiryJson: "/board/inquiryUpdateJson.do",
+    deleteInquiryJson: "/board/inquiryDeleteJson.do",
+    saveAnswerJson: "/board/answerInsertJson.do",
+};
