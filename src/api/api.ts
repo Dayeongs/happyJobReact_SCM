@@ -49,3 +49,7 @@ export const ReturndeliveryUpdateApi = {
 export const DirectionDeliveryListApi = {
     directionDeliveryListJson: `/direction/directionDeliveryListJson.do`,
 };
+
+export const OrderChkApi = {
+    orderListJson: "/work/orderListJson.do",
+};
