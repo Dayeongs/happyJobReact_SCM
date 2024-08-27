@@ -14,3 +14,13 @@ export const returnModalState = atom<boolean>({
     key: "returnModalState",
     default: false,
 });
+
+export const userInfoModalState = atom<boolean>({
+    key: "userInfoModalState",
+    default: false,
+});
+
+export const custInfoModalState = atom<boolean>({
+    key: "custInfoModalState",
+    default: false,
+});
